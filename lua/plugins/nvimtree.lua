@@ -5,8 +5,8 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup()
-		vim.keymap.set("n", "<leader>tt", vim.cmd.NvimTreeToggle)
-		vim.keymap.set("n", "<leader>tf", vim.cmd.NvimTreeFindFile)
+		vim.keymap.set("n", "<leader>et", vim.cmd.NvimTreeToggle)
+		vim.keymap.set("n", "<leader>ef", vim.cmd.NvimTreeFindFile)
 		require("nvim-web-devicons").refresh()
 	end
 }

@@ -17,19 +17,20 @@ return {
                         command = "npm test --",
 
                         is_test_file = require('neotest-mocha.util').create_test_file_extensions_matcher(
-                            { 'spec', 'tests%/.*' },
-                            { 'js', 'mjs', 'cjs', 'jsx', 'coffee', 'ts', 'tsx' }
+                            { 'spec', 'test[s]?%/.*' },
+                            { 'js', 'mjs', 'cjs', 'jsx', 'coffee', 'ts', 'tsx', 'lua' }
                         ),
                     }),
                 }
             })
-            vim.keymap.set('n', '<leader>tstm', neotest.run.run)
-            vim.keymap.set('n', '<leader>tstf', function()
+            vim.keymap.set('n', '<leader>tm', neotest.run.run)
+            vim.keymap.set('n', '<leader>tf', function()
                 neotest.run.run(vim.fn.expand("%"))
             end)
-            vim.keymap.set('n', '<leader>tstd', function()
+            vim.keymap.set('n', '<leader>td', function()
                 neotest.run.run({strategy = "dap"})
             end)
+            vim.keymap.set('n', '<leader>ts', neotest.summary.toggle)
         end
     }
 }
