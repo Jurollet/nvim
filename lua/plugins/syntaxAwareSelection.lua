@@ -1,3 +1,3 @@
 return {
-    'terryma/vim-expand-region',
+    'gorkunov/smartpairs.vim',
 }
