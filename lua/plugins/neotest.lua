@@ -23,14 +23,14 @@ return {
                     }),
                 }
             })
-            vim.keymap.set('n', '<leader>tm', neotest.run.run)
+            vim.keymap.set('n', '<leader>tm', neotest.run.run, { desc = "Method" })
             vim.keymap.set('n', '<leader>tf', function()
                 neotest.run.run(vim.fn.expand("%"))
-            end)
+            end, { desc = "File" })
             vim.keymap.set('n', '<leader>td', function()
                 neotest.run.run({strategy = "dap"})
-            end)
-            vim.keymap.set('n', '<leader>ts', neotest.summary.toggle)
+            end, { desc = "Debug" })
+            vim.keymap.set('n', '<leader>ts', neotest.summary.toggle, { desc = "Summary"})
         end
     }
 }

@@ -41,5 +41,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>y", "\"+y") -- normal mode
-vim.keymap.set("v", "<leader>y", "\"+y") -- visual mode
+vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Yank in pastebin" }) -- normal mode
+vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank in pastebin" }) -- visual mode

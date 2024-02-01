@@ -23,9 +23,9 @@ return {
                 command = "node",
                 args = { mason_path .. "packages/node-debug2-adapter/out/src/nodeDebug.js" }
             }
-            vim.keymap.set('n', '<leader>dl', dap.continue, {})
-            vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, {})
-            vim.keymap.set('n', '<leader>dt', dap.terminate, {})
+            vim.keymap.set('n', '<leader>dl', dap.continue, { desc = "Lauch" })
+            vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
+            vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = "Terminate" })
         end
     },
     {
