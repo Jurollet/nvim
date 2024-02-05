@@ -10,11 +10,12 @@ return {
             -- refer to the configuration section below
         }
         wk.register({
-            f = { name = "Find" },
+            d = { name = "Debug" },
             e = { name = "Explore" },
+            f = { name = "Find" },
+            l = { name = "LSP" },
             s = { name = "Shell" },
             t = { name = "Test" },
-            d = { name = "Debug" },
             x = { name = "Fix" }
         }, { prefix = "<leader>" })
     end

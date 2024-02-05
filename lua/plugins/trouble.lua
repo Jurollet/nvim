@@ -10,5 +10,7 @@ return {
         vim.keymap.set("n", "<leader>xq", function() trouble.toggle("quickfix") end, { desc = "Quickfix" })
         vim.keymap.set("n", "<leader>xl", function() trouble.toggle("loclist") end, { desc = "Localisations" })
         vim.keymap.set("n", "gR", function() trouble.toggle("lsp_references") end, { desc = "References" })
+
+        vim.keymap.set("n", "<leader>lr", function() trouble.toggle("lsp_references") end, { desc = "References" })
     end
 }
