@@ -35,6 +35,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
 
+vim.opt.swapfile = false
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
