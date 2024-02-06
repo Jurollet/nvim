@@ -13,6 +13,7 @@ return {
             d = { name = "Debug" },
             e = { name = "Explore" },
             f = { name = "Find" },
+            g = { name = "Git", t = "Toggle" },
             l = { name = "LSP" },
             s = { name = "Shell" },
             t = { name = "Test" },

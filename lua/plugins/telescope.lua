@@ -12,5 +12,7 @@ return {
         vim.keymap.set('n', '<leader>fw', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end, { desc = "Find Word" })
+        
+        vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = "Git status" })
     end
 }
