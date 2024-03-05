@@ -37,6 +37,8 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.swapfile = false
 
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
