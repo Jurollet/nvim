@@ -25,12 +25,16 @@ return {
                 ["ctrl-a"]     = "beginning-of-line",
                 ["ctrl-e"]     = "end-of-line",
                 ["alt-a"]      = "toggle-all",
-                ["ctrl-q"]     = "select-all+accept",
                 -- Only valid with fzf previewers (bat/cat/git/etc)
                 ["f3"]         = "toggle-preview-wrap",
                 ["f4"]         = "toggle-preview",
                 ["shift-down"] = "preview-page-down",
                 ["shift-up"]   = "preview-page-up",
+            },
+            keymap = {
+                fzf = {
+                    ["ctrl-q"]     = "select-all+accept",
+                }
             },
         })
 
@@ -44,5 +48,9 @@ return {
         vim.keymap.set('v', '<leader>fg', fzfLua.grep_visual, { desc = "Grep visual" })
 
         vim.keymap.set('n', '<leader>gs', fzfLua.git_status, { desc = "Git status" })
+
+        local config = require("fzf-lua.config")
+        local actions = require("trouble.sources.fzf").actions
+        config.defaults.actions.files["ctrl-t"] = actions.open
   end
 }
