@@ -1,6 +1,6 @@
 return {
-    { 
-        "mfussenegger/nvim-dap", 
+    {
+        "mfussenegger/nvim-dap",
         config = function()
             local dap = require('dap')
             dap.configurations.typescript = {
@@ -30,7 +30,10 @@ return {
     },
     {
         "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
+        requires = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
         config = function()
             local dap = require("dap")
             local dapui = require('dapui')
