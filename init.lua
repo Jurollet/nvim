@@ -51,6 +51,7 @@ vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Yank in pastebin" }) -- norma
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank in pastebin" }) -- visual mode
 
 vim.keymap.set("n", "<Leader>c", [[:%s/<C-r><C-w>//g<Left><Left>]], { desc = "Change word" })
+vim.keymap.set("v", "<Leader>c", "\"vy:%s/<C-R>v//g<Left><Left>", { desc = "Change word" })
 
 vim.diagnostic.config({
     severity_sort = true,
