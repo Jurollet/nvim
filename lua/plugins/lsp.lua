@@ -49,6 +49,14 @@ return {
             },
         })
 
+        require('lspconfig').tsserver.setup({
+            init_options = {
+                preferences = {
+                    importModuleSpecifierPreference = 'non-relative',
+                },
+            }
+        })
+
         local cmp = require('cmp')
 
         cmp.setup({
