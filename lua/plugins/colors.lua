@@ -17,6 +17,17 @@ return {
             vim.opt.termguicolors = true
             vim.opt.showmode = false
             vim.cmd([[colorscheme catppuccin]])
+            vim.keymap.set("n", "<leader>ad", function() vim.cmd([[colorscheme catppuccin-mocha]]) end, { desc = "Dark Theme" })
         end
+    }, {
+        'projekt0n/github-nvim-theme',
+        config = function()
+            require('github-theme').setup({
+                options = {
+                    dim_inactive = true,
+                }
+            })
+            vim.keymap.set("n", "<leader>al", function() vim.cmd([[colorscheme github_light]]) end, { desc = "Light Theme" })
+        end,
     }
 }
