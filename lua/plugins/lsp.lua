@@ -43,13 +43,13 @@ return {
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = {'tsserver', 'rust_analyzer', 'lua_ls'},
+            ensure_installed = {'ts_ls', 'rust_analyzer', 'lua_ls'},
             handlers = {
                 default_setup,
             },
         })
 
-        require('lspconfig').tsserver.setup({
+        require('lspconfig').ts_ls.setup({
             init_options = {
                 preferences = {
                     importModuleSpecifierPreference = 'non-relative',
