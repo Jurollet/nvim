@@ -3,8 +3,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-nvim-lsp",
+        "saghen/blink.cmp",
         "L3MON4D3/LuaSnip",
     },
     config = function()
@@ -33,7 +32,7 @@ return {
             end
         })
 
-        local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+        local lsp_capabilities = require('blink.cmp').get_lsp_capabilities()
 
         local default_setup = function(server)
             require('lspconfig')[server].setup({
@@ -57,25 +56,25 @@ return {
             }
         })
 
-        local cmp = require('cmp')
-
-        cmp.setup({
-            sources = {
-                {name = 'nvim_lsp'},
-                {name = 'luasnip'},
-            },
-            mapping = cmp.mapping.preset.insert({
-                -- Enter key confirms completion item
-                ['<CR>'] = cmp.mapping.confirm({select = true}),
-
-                -- Ctrl + space triggers completion menu
-                ['<C-Space>'] = cmp.mapping.complete(),
-            }),
-            snippet = {
-                expand = function(args)
-                    require('luasnip').lsp_expand(args.body)
-                end,
-            },
-        })
+        -- local cmp = require('cmp')
+        --
+        -- cmp.setup({
+        --     sources = {
+        --         {name = 'nvim_lsp'},
+        --         {name = 'luasnip'},
+        --     },
+        --     mapping = cmp.mapping.preset.insert({
+        --         -- Enter key confirms completion item
+        --         ['<CR>'] = cmp.mapping.confirm({select = true}),
+        --
+        --         -- Ctrl + space triggers completion menu
+        --         ['<C-Space>'] = cmp.mapping.complete(),
+        --     }),
+        --     snippet = {
+        --         expand = function(args)
+        --             require('luasnip').lsp_expand(args.body)
+        --         end,
+        --     },
+        -- })
     end
 }
