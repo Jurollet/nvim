@@ -53,6 +53,16 @@ vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Yank in pastebin" }) -- visua
 vim.keymap.set("n", "<Leader>c", [[:%s/<C-r><C-w>//g<Left><Left>]], { desc = "Change word" })
 vim.keymap.set("v", "<Leader>c", "\"vy:%s/<C-R>v//g<Left><Left>", { desc = "Change word" })
 
+vim.keymap.set("n", "wc", "<C-W>h")
+vim.keymap.set("n", "wt", "<C-W>j")
+vim.keymap.set("n", "ws", "<C-W>k")
+vim.keymap.set("n", "wr", "<C-W>l")
+vim.keymap.set("n", "<leader>wc", "<C-W>C")
+vim.keymap.set("n", "<leader>wt", "<C-W>J")
+vim.keymap.set("n", "<leader>ws", "<C-W>S")
+vim.keymap.set("n", "<leader>wg", vim.cmd.split)
+vim.keymap.set("n", "<leader>wh", vim.cmd.vsplit)
+
 vim.diagnostic.config({
     severity_sort = true,
     float = {
