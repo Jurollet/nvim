@@ -4,6 +4,7 @@ return {
     dependencies = {
         'rafamadriz/friendly-snippets',
         { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+        'Kaiser-Yang/blink-cmp-avante',
     },
     opts = {
         keymap = { preset = 'enter' },
@@ -19,20 +20,10 @@ return {
             jump = function(direction) require('luasnip').jump(direction) end,
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'luasnip', 'buffer' },
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
-        windows = {
-            documentation = {
-                border = vim.g.borderStyle,
-                min_width = 15,
-                max_width = 45, -- smaller, due to https://github.com/Saghen/blink.cmp/issues/194
-                max_height = 10,
-                auto_show = true,
-                auto_show_delay_ms = 250,
-            },
-            autocomplete = {
-                border = vim.g.borderStyle
-            },
+        fuzzy = {
+            implementation = 'lua',
         }
     }
 }
