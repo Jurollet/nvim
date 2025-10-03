@@ -78,7 +78,7 @@ return {
             dashboard.button("r", "💾  > Restore session", ":PossessionLoadCurrent<CR>"),
             dashboard.button("g", "🔀  > Open Git GUI", ":LazyGit<CR>"),
             dashboard.button("e", "✨  > New file", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("f", "🔎  > Find file", ":FzfLua files<CR>"),
+            dashboard.button("f", "🔎  > Find file", function() Snacks.picker.files() end),
             dashboard.button("s", "🛠️  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
             dashboard.button("q", "🚪  > Quit NVIM", ":qa<CR>"),
         }

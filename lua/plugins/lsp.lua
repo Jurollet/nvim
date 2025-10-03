@@ -35,7 +35,7 @@ return {
         local lsp_capabilities = require('blink.cmp').get_lsp_capabilities()
 
         local default_setup = function(server)
-            require('lspconfig')[server].setup({
+            vim.lsp.config[server].setup({
                 capabilities = lsp_capabilities,
             })
         end
@@ -48,13 +48,13 @@ return {
             },
         })
 
-        require('lspconfig').ts_ls.setup({
-            init_options = {
-                preferences = {
-                    importModuleSpecifierPreference = 'non-relative',
-                },
-            }
-        })
+        -- vim.lsp.config['ts_ls'].setup({
+        --     init_options = {
+        --         preferences = {
+        --             importModuleSpecifierPreference = 'non-relative',
+        --         },
+        --     }
+        -- })
 
         -- local cmp = require('cmp')
         --
