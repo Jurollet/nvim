@@ -37,6 +37,11 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.swapfile = false
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 3
+
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
