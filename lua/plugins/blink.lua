@@ -9,6 +9,7 @@ return {
     opts = {
         keymap = { preset = 'enter' },
         signature = { enabled = true },
+        completion = { documentation = { auto_show = true } },
         snippets = {
             expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
             active = function(filter)
@@ -20,7 +21,7 @@ return {
             jump = function(direction) require('luasnip').jump(direction) end,
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lsp', 'path', 'buffer' },
         },
         fuzzy = {
             implementation = 'lua',
