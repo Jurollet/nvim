@@ -10,7 +10,7 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'LSP actions',
             callback = function(event)
-                local opts = {buffer = event.buf}
+                local opts = { buffer = event.buf }
 
                 -- these will be buffer-local keybindings
                 -- because they only work if you have an active language server
@@ -23,12 +23,15 @@ return {
                 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
                 vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
                 vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-                vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+                vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
                 vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
-                vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = event.buf, desc = "Actions" })
-                vim.keymap.set('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<cr>', { buffer = event.buf, desc = "Rename" })
-                vim.keymap.set({'n', 'x'}, '<leader>lf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', { buffer = event.buf, desc = "Format" })
+                vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>',
+                    { buffer = event.buf, desc = "Actions" })
+                vim.keymap.set('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<cr>',
+                    { buffer = event.buf, desc = "Rename" })
+                vim.keymap.set({ 'n', 'x' }, '<leader>lf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>',
+                    { buffer = event.buf, desc = "Format" })
             end
         })
 
@@ -42,10 +45,27 @@ return {
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = {'ts_ls', 'rust_analyzer', 'lua_ls'},
+            ensure_installed = { 'ts_ls', 'rust_analyzer', 'lua_ls' },
             handlers = {
                 default_setup,
-            },
+                ['ts_ls'] = {
+                    capabilities = lsp_capabilities,
+                    settings = {
+                        javascript = {
+                            format = {
+                                insertSpaceAfterFunctionKeywordForAnonymousFunctions = false,
+                                insertSpaceBeforeFunctionParenthesis = false,
+                            }
+                        },
+                        typescript = {
+                            format = {
+                                insertSpaceAfterFunctionKeywordForAnonymousFunctions = false,
+                                insertSpaceBeforeFunctionParenthesis = false,
+                            }
+                        }
+                    }
+                }
+            }
         })
 
         -- vim.lsp.config['ts_ls'].setup({
